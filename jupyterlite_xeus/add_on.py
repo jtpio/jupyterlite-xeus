@@ -84,45 +84,45 @@ class XeusAddon(FederatedExtensionAddon):
         None,
         config=True,
         allow_none=True,
-        description="The path or URL to the empack config file",
+        help="The path or URL to the empack config file",
     )
 
     environment_file = ListLike(
         [],
         config=True,
-        description='The path to the environment file. Defaults to looking for "environment.yml" or "environment.yaml"',
+        help='The path to the environment file. Defaults to looking for "environment.yml" or "environment.yaml"',
     )
 
     prefix = ListLike(
         [],
         config=True,
-        description="The path to the wasm prefix",
+        help="The path to the wasm prefix",
     )
 
     default_channels = ListLike(
         [],
         config=True,
-        description="The channels to use",
+        help="The channels to use",
     )
 
     mount_jupyterlite_content = Bool(
         None,
         allow_none=True,
         config=True,
-        description="Whether or not to mount the jupyterlite content into the kernel. This would make the jupyterlite content available under the '/files' directory, and the kernels will automatically be started from there.",
+        help="Whether or not to mount the jupyterlite content into the kernel. This would make the jupyterlite content available under the '/files' directory, and the kernels will automatically be started from there.",
     )
 
     mounts = ListLike(
         [],
         config=True,
-        description="A list of mount points, in the form <host_path>:<mount_path> to mount in the wasm prefix",
+        help="A list of mount points, in the form <host_path>:<mount_path> to mount in the wasm prefix",
     )
 
     package_url_factory = Callable(
         None,
         allow_none=True,
         config=True,
-        description="Factory to generate package download URL from package metadata. This is used to load python packages from external host",
+        help="Factory to generate package download URL from package metadata. This is used to load python packages from external host",
     )
 
     def __init__(self, *args, **kwargs):
